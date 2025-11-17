@@ -1,7 +1,7 @@
 public class Enrollment {
 
-    private final Student student;
-    private final Course course;
+    private  Student student;
+    private  Course course;
 
     public Enrollment(Student student, Course course) {
         this.student = student;
@@ -14,10 +14,5 @@ public class Enrollment {
 
     public Course getCourse() {
         return course;
-    }
-
-    @Override
-    public String toString() {
-        return student.getId() + " -> " + course.getCode();
     }
 }
