@@ -1,26 +1,31 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
-import java.util.*;
-
 
 public class CadastroCurso implements MenuAction {
-    Scanner scanner = new Scanner(System.in);
+
+
 
     public String getName() {
-        System.out.println("ola");
-        return "ola";
+        return "Cadastrar um novo curso";
     }
-
 
     public void execute(Scanner scanner, CourseCatalog courseCatalog, StudentRegistry studentRegistry) {
-        System.out.println("Digite seu curso");
+        System.out.println("--- Cadastro de Curso ---");
+
+        System.out.print("Digite o nome do curso: ");
         String nomecurso = scanner.nextLine();
-        System.out.println("Quantas horas?");
+
+        System.out.print("Quantas horas? ");
         int horas = scanner.nextInt();
-        Course c1 = new Course("123", nomecurso,horas );
 
-        CourseCatalog coursecatalog = new CourseCatalog();
-        coursecatalog.addCourse(c1);
+        scanner.nextLine();
+
+
+        Course c1 = new Course("123", nomecurso, horas);
+
+        courseCatalog.addCourse(c1);
+
+        System.out.println("Curso cadastrado com sucesso: " + nomecurso);
     }
-
-
 }
