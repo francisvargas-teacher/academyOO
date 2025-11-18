@@ -15,6 +15,11 @@ public class AcademyApp {
         // Aqui você pode registrar 1 ou 2 ações de exemplo
         // e os alunos registram as deles depois:
         // registerAction(new ListCoursesAction());
+
+        // Adicionado: ação para listar os cursos de um aluno
+        registerAction(new ListStudentCoursesAction(
+                new EnrollmentService(courseCatalog, studentRegistry)
+        ));
     }
 
     public void registerAction(MenuAction action) {
