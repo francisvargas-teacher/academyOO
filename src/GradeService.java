@@ -1,7 +1,5 @@
 public class GradeService {
-
-    public String getAllGrades(){
-        return "TODO";
+    public String tapaBuraco(){
+        return "Hello World!";
     }
-
 }//end class

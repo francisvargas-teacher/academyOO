@@ -1,13 +1,28 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Student {
 
     private final String id;   // ex: matrícula
     private String name;
     private String email;
+    private List<Grade> allGrades = new ArrayList<Grade>();
 
     public Student(String id, String name, String email) {
         this.id = id;
         this.name = name;
         this.email = email;
+    }
+
+
+    public void setAllGrades(Grade studentGrade){
+        this.allGrades.add(studentGrade);
+    }
+
+    public String getAllGrades(){
+        List<String> GradesJaLidas = new ArrayList<String>();
+        for(Grade grade : allGrades){
+        }
     }
 
     public String getId() {
