@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class ListagemCursos implements MenuAction {
+public class ListarCursos implements MenuAction {
 
     @Override
     public String getName() {
@@ -11,7 +11,7 @@ public class ListagemCursos implements MenuAction {
     public void execute(Scanner scanner, CourseCatalog courseCatalog, StudentRegistry studentRegistry) {
         System.out.println("--- LISTA DE CURSOS CADASTRADOS ---");
 
-        courseCatalog.listCourses();
+        courseCatalog.findAll();
 
     }
 }
