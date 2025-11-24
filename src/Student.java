@@ -19,12 +19,6 @@ public class Student {
         this.allGrades.add(studentGrade);
     }
 
-    public String getAllGrades(){
-        List<String> GradesJaLidas = new ArrayList<String>();
-        for(Grade grade : allGrades){
-        }
-    }
-
     public String getId() {
         return id;
     }
