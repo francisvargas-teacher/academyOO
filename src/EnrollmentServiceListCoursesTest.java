@@ -9,9 +9,9 @@ public class EnrollmentServiceListCoursesTest {
     public void testListEmpty() {
         CourseCatalog catalog = new CourseCatalog();
         StudentRegistry registry = new StudentRegistry();
-        EnrollmentService service = new EnrollmentService(catalog, registry);
+        EnrollmentService service = new EnrollmentService(registry, catalog);
 
-        Student s = new Student("1", "Gabriel");
+        Student s = new Student("1", "Gabriel","gabriel@gmail.com");
         registry.addStudent(s);
 
         List<Course> courses = service.getCoursesByStudent("1");

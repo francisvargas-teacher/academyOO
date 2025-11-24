@@ -9,10 +9,10 @@ public class EnrollmentServiceEnrollTest {
     public void testEnrollBasic() {
         CourseCatalog catalog = new CourseCatalog();
         StudentRegistry registry = new StudentRegistry();
-        EnrollmentService service = new EnrollmentService(catalog, registry);
+        EnrollmentService service = new EnrollmentService(registry, catalog);
 
         // cria aluno e curso simples
-        Student s = new Student("1", "Gabriel",360);
+        Student s = new Student("1", "Gabriel","gabriel@gmail.com");
         Course c = new Course("C1", "Java",360);
 
         registry.addStudent(s);
