@@ -16,6 +16,7 @@ app.registerAction(new ListStudentCoursesAction(enrollmentService));
 
        
         // Inicia o sistema
-        app.start();
+app.start();
+
     }
 }
