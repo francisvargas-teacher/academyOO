@@ -12,8 +12,8 @@ public class EnrollmentServiceEnrollTest {
         EnrollmentService service = new EnrollmentService(catalog, registry);
 
         // cria aluno e curso simples
-        Student s = new Student("1", "Gabriel");
-        Course c = new Course("C1", "Java");
+        Student s = new Student("1", "Gabriel",360);
+        Course c = new Course("C1", "Java",360);
 
         registry.addStudent(s);
         catalog.addCourse(c);

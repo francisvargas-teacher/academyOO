@@ -8,9 +8,9 @@ public class EnrollmentServiceInvalidTest {
     public void testEnrollInvalidStudent() {
         CourseCatalog catalog = new CourseCatalog();
         StudentRegistry registry = new StudentRegistry();
-        EnrollmentService service = new EnrollmentService(catalog, registry);
+        EnrollmentService service = new EnrollmentService(registry, catalog);
 
-        Course c = new Course("C1", "Java");
+        Course c = new Course("C1", "Java",360);
         catalog.addCourse(c);
 
         // espera exceção porque não existe aluno "X"
