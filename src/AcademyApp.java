@@ -18,7 +18,7 @@ public class AcademyApp {
 
         // Adicionado: ação para listar os cursos de um aluno
         registerAction(new ListStudentCoursesAction(
-                new EnrollmentService(courseCatalog, studentRegistry)
+                new EnrollmentService(studentRegistry, courseCatalog)
         ));
     }
 
