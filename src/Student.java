@@ -14,11 +14,6 @@ public class Student {
         this.email = email;
     }
 
-
-    public void setAllGrades(Grade studentGrade){
-        this.allGrades.add(studentGrade);
-    }
-
     public String getId() {
         return id;
     }
