@@ -1,12 +1,12 @@
-package academyoo.actions;
 
-import academyoo.core.MenuAction;
-import academyoo.core.Student;
-import academyoo.core.StudentRegistry;
-import academyoo.core.CourseCatalog; // Necessário devido à nova assinatura do execute()
 import java.util.Scanner;
 
 public class CreateStudentAction implements MenuAction {
+
+    @Override
+    public String getName() {
+        return "Cadastrar Novo Aluno";
+    }
 
     @Override
     public void execute(Scanner scanner, CourseCatalog courseCatalog, StudentRegistry studentRegistry) {
@@ -31,10 +31,5 @@ public class CreateStudentAction implements MenuAction {
         } catch (IllegalArgumentException e) {
             System.err.println(" Erro ao cadastrar aluno: " + e.getMessage());
         }
-    }
-
-    @Override
-    public String name() {
-        return "Cadastrar Novo Aluno";
     }
 }
