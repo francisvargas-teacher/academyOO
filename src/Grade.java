@@ -6,6 +6,12 @@ public class Grade{
     private Course curso;
     private Student aluno;
 
+    public Grade(double nota, Course curso, Student aluno){
+        this.nota = nota;
+        this.curso = curso;
+        this.aluno = aluno;
+    }
+
     public String lancarNota(Course curso, Student aluno, double nota){
         this.curso = curso;
         this.aluno = aluno;
@@ -20,8 +26,7 @@ public class Grade{
     public Student getAluno() {
         return aluno;
     }
-
-    public double getNotas() {
+    public double getNota() {
         return nota;
     }
 }//end class
