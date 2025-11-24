@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-import java.util.List;
 
 public class GradeService {
 
@@ -20,6 +19,15 @@ public class GradeService {
         Grade grade_temp = new Grade(nota, curso, aluno);
         notas.add(grade_temp);
         return grade_temp;
+    }
+    public ArrayList<Double> getGradesAlunoCurso(Course curso, Student aluno){
+        ArrayList<Double> TodasNotas = new ArrayList<Double>();
+        for(int i = 0;i < notas.size();i++){
+            if(notas.get(i).getCurso().equals(curso) &&  notas.get(i).getAluno().equals(aluno)){
+                TodasNotas.add(notas.get(i).getNota());
+            }
+        }
+        return TodasNotas;
     }
 
 }//end class
