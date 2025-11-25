@@ -6,17 +6,14 @@ public class SafeRemoveService {
         this.enrollmentService = enrollmentService;
     }
 
-    public void removeStudent(Student s, StudentRegistry registry) {
-        if (enrollmentService.isStudentEnrolled(s)) {
+    public void removeStudent(Student s, StudentRegistry registry, Course c) {
+        if (enrollmentService.isStudentEnrolled(s.getId(),c.getCode())) {
             throw new IllegalArgumentException("❌ Não é possível remover: aluno está matriculado.");
         }
         registry.removeStudent(s);
     }
 
     public void removeCourse(Course c, CourseCatalog catalog) {
-        if (enrollmentService.hasEnrollmentsInCourse(c)) {
-            throw new IllegalArgumentException("❌ Não é possível remover: curso possui matrículas.");
-        }
         catalog.removeCourse(c);
     }
 }

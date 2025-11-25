@@ -44,4 +44,24 @@ public class EnrollmentService {
 
         return list;
     }
+
+    public boolean isStudentEnrolled(String studentId, String courseCode) {
+        // Busca aluno
+        Student student = studentRegistry.findById(studentId)
+                .orElseThrow(() -> new IllegalArgumentException("Aluno não encontrado."));
+
+        // Busca curso
+        Course course = courseCatalog.findByCode(courseCode)
+                .orElseThrow(() -> new IllegalArgumentException("Curso não encontrado."));
+
+        // Verifica se já está matriculado
+        for (Enrollment e : enrollments) {
+            if (e.getStudent().getId().equalsIgnoreCase(studentId) &&
+                    e.getCourse().getCode().equalsIgnoreCase(courseCode)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
 }
