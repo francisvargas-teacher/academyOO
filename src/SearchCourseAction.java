@@ -10,23 +10,24 @@ public class SearchCourseAction implements MenuAction {
     }
 
     @Override
-    public void execute(Scanner sc) {
+    public void execute(Scanner sc, CourseCatalog courseCatalog, StudentRegistry studentRegistry) {
         System.out.print("Digite parte do nome do curso: ");
         sc.nextLine(); // limpa buffer
         String keyword = sc.nextLine().toLowerCase();
 
-        List<Course> cursos = courseCatalog.getAllCourses();
+        List<Course> cursos = courseCatalog.findAll();
 
         System.out.println("\n--- Resultados ---");
 
         cursos.stream()
             .filter(c -> c.getName().toLowerCase().contains(keyword))
-            .forEach(c -> System.out.println(c.getId() + " - " + c.getName()));
+            .forEach(c -> System.out.println(c.getCode() + " - " + c.getName()));
     }
 
     @Override
     public String getName() {
         return "Buscar cursos por palavra-chave";
     }
+
 }
     

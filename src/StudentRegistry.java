@@ -22,4 +22,13 @@ public class StudentRegistry {
     public List<Student> findAll() {
         return new ArrayList<>(students);
     }
+
+    public void removeStudent(Student s) {
+        if (findById(s.getId()).isPresent()) {
+            students.remove(s);
+        }else{
+            System.out.println("Aluno já foi removido");
+        }
+
+    }
 }
